@@ -33,6 +33,8 @@
     ]
   },
   "devDependencies": {
-    "ajv": "8.17.1"
+    "ajv": "8.17.1",
+  "react-scripts": "5.0.1"
+
   }
 }
