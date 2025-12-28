@@ -9,7 +9,7 @@
     "client": "cd client && npm start",
     "client-next": "cd client-next && npm run dev",
     "install-all": "npm install && cd server && npm install && cd ../client && npm install",
-    "build": "cd client-next && npm run build"
+    "build": "cd client-next && npm install && npm run build"
   },
   "keywords": [
     "url-shortener",
