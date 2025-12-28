@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './UrlList.css';
+import CircularGauge from './ui/CircularGauge';
 
 const UrlList = ({ urls }) => {
   const [copiedId, setCopiedId] = useState(null);
@@ -34,14 +35,14 @@ const UrlList = ({ urls }) => {
           <div key={url.id} className="url-card">
             <div className="url-card-header">
               <div className="badge-row">
-                <span className="url-badge">{url.clicks} clicks</span>
-                {url.maxClicks ? (
-                  <span className="url-badge secondary">
-                    {url.clicksRemaining ?? url.maxClicks} / {url.maxClicks} left
-                  </span>
-                ) : (
-                  <span className="url-badge secondary">Unlimited</span>
-                )}
+                <div style={{ position: 'absolute', top: '1rem', right: '1rem' }}>
+                  <CircularGauge 
+                    value={url.clicks} 
+                    max={url.maxClicks || Infinity} 
+                    size={60} 
+                    strokeWidth={6} 
+                  />
+                </div>
                 {url.isExpired && (
                   <span className="url-badge danger">Expired</span>
                 )}

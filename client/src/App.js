@@ -4,6 +4,7 @@ import UrlShortener from './components/UrlShortener';
 import UrlList from './components/UrlList';
 import Header from './components/Header';
 import ThemeToggle from './components/ThemeToggle';
+import Background3D from './components/Background3D';
 
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <div className="App">
+      <Background3D />
       <ThemeToggle />
       <Header />
       <div className="container">
@@ -41,6 +43,16 @@ function App() {
         />
         <UrlList urls={urls} />
       </div>
+      <footer style={{
+        textAlign: 'center',
+        padding: '2rem',
+        color: 'var(--text-tertiary)',
+        fontSize: '0.9rem',
+        position: 'relative',
+        zIndex: 1
+      }}>
+        © {new Date().getFullYear()} SnapLink. Created by misty299
+      </footer>
     </div>
   );
 }

@@ -34,6 +34,7 @@ function buildResponseRow(row, baseUrl) {
     createdAt: row.created_at,
     expiresAt: row.expires_at,
     maxClicks: row.max_clicks,
+    copies: row.copies || 0,
     isExpired: status.expired,
     expiredReason: status.reason,
     clicksRemaining: row.max_clicks ? Math.max(row.max_clicks - row.clicks, 0) : null
@@ -141,7 +142,29 @@ router.post('/shorten', async (req, res) => {
   }
 });
 
-// Get all URLs (for stats)
+// Get recent URLs
+router.get('/recent', (req, res) => {
+  const db = getDatabase();
+  const limit = parseInt(req.query.limit) || 50;
+  
+  db.all(
+    'SELECT * FROM urls ORDER BY created_at DESC LIMIT ?',
+    [limit],
+    (err, rows) => {
+      if (err) {
+        console.error('Database error:', err);
+        return res.status(500).json({ error: 'Failed to fetch URLs' });
+      }
+      
+      const baseUrl = `${req.protocol}://${req.get('host')}`;
+      const urls = rows.map(row => buildResponseRow(row, baseUrl));
+      
+      res.json(urls);
+    }
+  );
+});
+
+// Get all URLs (legacy root)
 router.get('/', (req, res) => {
   const db = getDatabase();
   const limit = parseInt(req.query.limit) || 50;
@@ -227,6 +250,20 @@ router.get('/:code/stats', (req, res) => {
     
     const baseUrl = `${req.protocol}://${req.get('host')}`;
     res.json(buildResponseRow(row, baseUrl));
+  });
+});
+
+// Track copy action
+router.post('/:code/copy', (req, res) => {
+  const db = getDatabase();
+  const { code } = req.params;
+  
+  db.run('UPDATE urls SET copies = IFNULL(copies, 0) + 1 WHERE short_code = ?', [code], function(err) {
+      if (err) {
+        console.error('Database error:', err);
+        return res.status(500).json({ error: 'Database error' });
+      }
+      res.json({ success: true, updated: this.changes > 0 });
   });
 });
 

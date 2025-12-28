@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './UrlShortener.css';
+import TypewriterInput from './ui/TypewriterInput';
+import GlowingButton from './ui/GlowingButton';
 
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
@@ -66,14 +68,14 @@ const UrlShortener = ({ onUrlCreated, loading, setLoading }) => {
         <h2>Shorten Your URL</h2>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
-            <input
+             <TypewriterInput
               type="url"
-              placeholder="Paste your long URL here..."
               value={originalUrl}
               onChange={(e) => setOriginalUrl(e.target.value)}
               required
               disabled={loading}
-            />
+              className="glass-input"
+             />
           </div>
           
           {showCustomCode && (
@@ -135,13 +137,12 @@ const UrlShortener = ({ onUrlCreated, loading, setLoading }) => {
             >
               {showAdvanced ? 'Hide Options' : 'Expire/Limit'}
             </button>
-            <button
+            <GlowingButton
               type="submit"
-              className="btn-primary"
               disabled={loading || !originalUrl}
             >
               {loading ? 'Shortening...' : 'Shorten URL'}
-            </button>
+            </GlowingButton>
           </div>
         </form>
 

@@ -4,11 +4,12 @@
   "description": "A responsive SnapLink URL shortener",
   "main": "server/index.js",
   "scripts": {
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently \"npm run server\" \"npm run client-next\"",
     "server": "cd server && npm run dev",
     "client": "cd client && npm start",
+    "client-next": "cd client-next && npm run dev",
     "install-all": "npm install && cd server && npm install && cd ../client && npm install",
-    "build": "cd client && npm run build"
+    "build": "cd client-next && npm run build"
   },
   "keywords": [
     "url-shortener",

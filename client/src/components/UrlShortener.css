@@ -15,28 +15,34 @@
 }
 
 .shortener-card {
-  background: var(--bg-card);
-  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
   padding: 2.5rem;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   max-width: 700px;
   margin: 0 auto;
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
 }
 
-.shortener-card::before {
-  content: '';
+/* Gradient Border Glow */
+.shortener-card::after {
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
-  background-size: 200% 100%;
-  animation: gradientShift 3s ease infinite;
+  inset: -1px;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0));
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 @keyframes gradientShift {
@@ -55,10 +61,14 @@
 
 .shortener-card h2 {
   color: var(--text-primary);
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
   text-align: center;
-  transition: color var(--transition-base);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(to right, #fff, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .input-group {
@@ -69,20 +79,23 @@
   display: block;
   font-size: 0.9rem;
   color: var(--text-secondary);
-  margin-bottom: 0.35rem;
-  font-weight: 600;
-  transition: color var(--transition-base);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
 }
 
 .input-group input {
   width: 100%;
   padding: 1rem;
   font-size: 1rem;
-  border: 2px solid var(--border-color);
-  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
   transition: all var(--transition-base);
-  background: var(--bg-card);
+  background: rgba(0, 0, 0, 0.2);
   color: var(--text-primary);
+  backdrop-filter: blur(4px);
 }
 
 .input-group input::placeholder {
@@ -128,10 +141,12 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
   color: white;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .btn-primary::before {

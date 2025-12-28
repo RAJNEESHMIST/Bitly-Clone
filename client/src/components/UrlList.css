@@ -36,12 +36,14 @@
 }
 
 .url-card {
-  background: var(--bg-card);
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
   padding: 1.5rem;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all var(--transition-base);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
   animation: cardFadeIn 0.5s ease-out;
@@ -99,14 +101,16 @@
 }
 
 .url-badge {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: rgba(99, 102, 241, 0.2);
+  color: #a5b4fc;
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 600;
   transition: all var(--transition-base);
   display: inline-block;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.1);
 }
 
 .url-badge:hover {

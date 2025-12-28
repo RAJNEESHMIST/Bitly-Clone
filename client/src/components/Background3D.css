@@ -1,0 +1,16 @@
+.background-3d {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none; /* Allows clicking through to content */
+  background: var(--bg-color); /* Matches theme background */
+  transition: background-color 0.3s ease;
+}
+
+/* Ensure canvas captures events if we want interaction */
+.background-3d > div {
+  pointer-events: auto;
+}

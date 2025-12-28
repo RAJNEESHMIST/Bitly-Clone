@@ -1,0 +1,68 @@
+.glowing-btn {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+}
+
+.glowing-btn-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  background: var(--bg-primary);
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.glowing-btn::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: var(--gradient-main);
+  z-index: 0;
+  border-radius: 14px;
+  background-size: 300% 300%;
+  animation: gradientMoved 3s ease alternate infinite;
+}
+
+.glowing-btn-content {
+  position: relative;
+  z-index: 2;
+  display: block;
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.glowing-btn:hover .glowing-btn-content {
+  background: transparent;
+}
+
+.glowing-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.glowing-btn:disabled::before {
+  animation: none;
+  background: var(--border-color);
+}
+
+@keyframes gradientMoved {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

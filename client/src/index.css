@@ -1,18 +1,28 @@
 :root {
-  /* Light Theme Colors */
-  --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --bg-card: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --text-primary: #333333;
-  --text-secondary: #666666;
-  --text-tertiary: #999999;
+  /* Light Theme Colors (Modified for Vibrancy) */
+  --bg-primary: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-secondary: rgba(255, 255, 255, 0.05);
+  
+  /* Modern Triad Palette */
+  --color-primary: #6366f1;   /* Indigo */
+  --color-secondary: #d946ef; /* Fuchsia */
+  --color-tertiary: #06b6d4;  /* Cyan */
+  
+  --gradient-main: linear-gradient(135deg, var(--color-tertiary), var(--color-primary), var(--color-secondary));
+  --gradient-glow: linear-gradient(90deg, var(--color-tertiary), var(--color-secondary));
+
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.8);
+  --text-tertiary: rgba(255, 255, 255, 0.5);
   --text-inverse: #ffffff;
-  --border-color: #e0e0e0;
-  --accent-color: #667eea;
-  --accent-hover: #5568d3;
-  --error-color: #c33;
-  --error-bg: #fee;
-  --success-color: #28a745;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --accent-color: var(--color-primary);
+  --accent-hover: var(--color-secondary);
+  --error-color: #fca5a5;
+  --error-bg: rgba(220, 38, 38, 0.2);
+  --success-color: #34d399;
+  
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.2);
@@ -23,24 +33,15 @@
 }
 
 [data-theme="dark"] {
-  /* Dark Theme Colors */
-  --bg-primary: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  --bg-card: #1e293b;
-  --bg-secondary: #0f172a;
-  --text-primary: #f1f5f9;
-  --text-secondary: #cbd5e1;
+  /* Dark Theme Colors - Consistent with Light for Glassmorphism */
+  --bg-primary: linear-gradient(135deg, #020617 0%, #1e1b4b 100%);
+  --bg-card: rgba(15, 23, 42, 0.6);
+  --bg-secondary: rgba(30, 41, 59, 0.6);
+  --text-primary: #f8fafc;
+  --text-secondary: #e2e8f0;
   --text-tertiary: #94a3b8;
-  --text-inverse: #1e293b;
-  --border-color: #334155;
-  --accent-color: #818cf8;
-  --accent-hover: #6366f1;
-  --error-color: #f87171;
-  --error-bg: #7f1d1d;
-  --success-color: #34d399;
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
-  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.6);
+  --text-inverse: #f8fafc;
+  --border-color: rgba(148, 163, 184, 0.1);
 }
 
 * {

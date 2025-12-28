@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base HSL Values for Shadcn & Custom Theme */
+    --background: 230 40% 7%; /* Deeper, richer blue-black */
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 246 80% 60%; /* Indigo */
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+ 
+    --accent: 217 32% 17%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 224 76% 48%;
+ 
+    --radius: 0.75rem;
+
+    /* Custom Palette (HSL) - Neon Enhanced */
+    --cyan: 190 100% 50%;     /* Electric Cyan */
+    --fuchsia: 310 90% 65%;   /* Hot Pink */
+    --violet: 270 95% 65%;    /* Bright Violet */
+  }
+ 
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 246 80% 60%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+ 
+    --accent: 217 32% 17%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 224 76% 48%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

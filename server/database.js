@@ -36,6 +36,7 @@ function initDatabase() {
           original_url TEXT NOT NULL,
           short_code TEXT UNIQUE NOT NULL,
           clicks INTEGER DEFAULT 0,
+          copies INTEGER DEFAULT 0,
           created_at DATETIME DEFAULT CURRENT_TIMESTAMP
         )
       `, (err) => {
@@ -62,7 +63,8 @@ function ensureUrlSchema(database) {
   // Adds new columns for optional link expiration and click caps without breaking existing data
   const neededColumns = [
     { name: 'expires_at', ddl: 'ALTER TABLE urls ADD COLUMN expires_at DATETIME' },
-    { name: 'max_clicks', ddl: 'ALTER TABLE urls ADD COLUMN max_clicks INTEGER' }
+    { name: 'max_clicks', ddl: 'ALTER TABLE urls ADD COLUMN max_clicks INTEGER' },
+    { name: 'copies', ddl: 'ALTER TABLE urls ADD COLUMN copies INTEGER DEFAULT 0' }
   ];
 
   return new Promise((resolve, reject) => {
