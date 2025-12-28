@@ -2,7 +2,7 @@ const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 const fs = require('fs');
 
-const DB_PATH = path.join(__dirname, 'data', 'bityly.db');
+const DB_PATH = path.join(__dirname, 'data', 'snaplink.db');
 const DB_DIR = path.dirname(DB_PATH);
 
 // Ensure data directory exists

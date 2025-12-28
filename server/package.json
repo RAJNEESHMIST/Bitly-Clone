@@ -1,7 +1,7 @@
 {
-  "name": "bityly-server",
+  "name": "snaplink-server",
   "version": "1.0.0",
-  "description": "Backend API for Bityly URL shortener",
+  "description": "Backend API for SnapLink URL shortener",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -19,4 +19,3 @@
     "nodemon": "^3.0.1"
   }
 }
-

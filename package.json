@@ -1,7 +1,7 @@
 {
-  "name": "bityly",
+  "name": "snaplink",
   "version": "1.0.0",
-  "description": "A responsive Bitly clone for URL shortening",
+  "description": "A responsive SnapLink URL shortener",
   "main": "server/index.js",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
@@ -10,11 +10,14 @@
     "install-all": "npm install && cd server && npm install && cd ../client && npm install",
     "build": "cd client && npm run build"
   },
-  "keywords": ["url-shortener", "bitly-clone", "react"],
+  "keywords": [
+    "url-shortener",
+    "bitly-clone",
+    "react"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^8.2.2"
   }
 }
-

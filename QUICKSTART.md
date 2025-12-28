@@ -23,7 +23,7 @@ Navigate to `http://localhost:3000` and start shortening URLs!
 
 ### Database Setup
 - **No database URL needed!** The app uses SQLite by default
-- Database file is automatically created at `server/data/bityly.db`
+- Database file is automatically created at `server/data/snaplink.db`
 - No external database installation required
 
 ### Environment Variables

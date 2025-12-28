@@ -13,14 +13,14 @@ export const useTheme = () => {
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     // Get theme from localStorage or default to 'light'
-    const savedTheme = localStorage.getItem('bityly-theme');
+    const savedTheme = localStorage.getItem('snaplink-theme');
     return savedTheme || 'light';
   });
 
   useEffect(() => {
     // Apply theme to document root
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('bityly-theme', theme);
+    localStorage.setItem('snaplink-theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {

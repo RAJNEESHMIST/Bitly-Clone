@@ -1,4 +1,4 @@
-# Bityly - URL Shortener Clone
+# SnapLink - URL Shortener
 
 A responsive, full-stack URL shortener application built with React and Node.js, inspired by Bitly.
 
@@ -41,7 +41,7 @@ This will install dependencies for:
 
 ### 2. Environment Configuration
 
-The application uses SQLite by default, so **no database URL configuration is needed** for basic setup. The database file will be automatically created in `server/data/bityly.db`.
+The application uses SQLite by default, so **no database URL configuration is needed** for basic setup. The database file will be automatically created in `server/data/snaplink.db`.
 
 If you want to use a different database (PostgreSQL or MongoDB), you can configure it in `server/.env`:
 
