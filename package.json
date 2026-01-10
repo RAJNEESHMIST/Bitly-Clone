@@ -8,7 +8,7 @@
     "server": "cd server && npm run dev",
     "client": "cd client && npm start",
     "client-next": "cd client-next && npm run dev",
-    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install && cd ../client-next && npm install",
     "build": "cd client-next && npm install && npm run build"
   },
   "keywords": [
